@@ -4,7 +4,7 @@ import NavBar from '../navbar'
 import { Box, Container } from '@chakra-ui/react'
 import Footer from '../footer'
 
-const Main = ({ children, router }) => {
+const Main = ({ children, router, wallet }) => {
   return (
     <Box as="main" pb={8}>
       <Head>
@@ -19,7 +19,7 @@ const Main = ({ children, router }) => {
         <title>Degen Hounds</title>
       </Head>
 
-      <NavBar path={router.asPath} />
+      <NavBar path={router.asPath} wallet={wallet}/>
 
       <Container maxW="container.md" pt={14}>
 

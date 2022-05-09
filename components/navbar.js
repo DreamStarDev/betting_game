@@ -12,11 +12,12 @@ import {
   MenuList,
   MenuButton,
   IconButton,
-  useColorModeValue
+  useColorModeValue,
+  Text
 } from '@chakra-ui/react'
 import { HamburgerIcon } from '@chakra-ui/icons'
 import ThemeToggleButton from './theme-toggle-button'
-import { IoLogoTwitter, IoLogoDiscord} from 'react-icons/io5'
+import { IoLogoTwitter, IoLogoDiscord } from 'react-icons/io5'
 
 const LinkItem = ({ href, path, target, children, ...props }) => {
   const active = path === href
@@ -36,9 +37,9 @@ const LinkItem = ({ href, path, target, children, ...props }) => {
   )
 }
 
-const Navbar = props => {
-  const { path } = props
-
+const Navbar = (props) => {
+  const { path, wallet } = props
+  
   return (
     <Box
       position="fixed"
@@ -80,7 +81,7 @@ const Navbar = props => {
             style={{ gap: 4 }}
             pl={2}
           >
-          <IoLogoDiscord />
+            <IoLogoDiscord />
             Discord
           </LinkItem>
           <LinkItem
@@ -92,7 +93,7 @@ const Navbar = props => {
             style={{ gap: 4 }}
             pl={2}
           >
-          <IoLogoTwitter />
+            <IoLogoTwitter />
             Twitter
           </LinkItem>
           <LinkItem
@@ -106,33 +107,41 @@ const Navbar = props => {
           >
             Opensea
           </LinkItem>
+
+          <Text>
+            {wallet.length > 0 ? (
+              String(wallet).substring(0, 6) +
+              "..." +
+              String(wallet).substring(38)
+            ) : ''}
+          </Text>
         </Stack>
 
-        <Box flex={1} align="right">
-          <ThemeToggleButton />
+          <Box flex={1} align="right">
+            <ThemeToggleButton />
 
-          <Box ml={2} display={{ base: 'inline-block', md: 'none' }}>
-            <Menu isLazy id="navbar-menu">
-              <MenuButton
-                as={IconButton}
-                icon={<HamburgerIcon />}
-                variant="outline"
-                aria-label="Options"
-              />
-              <MenuList>
-                <MenuItem
-                  as={Link}
-                  href="https://github.com/craftzdog/craftzdog-homepage"
-                >
-                  Source
+            <Box ml={2} display={{ base: 'inline-block', md: 'none' }}>
+              <Menu isLazy id="navbar-menu">
+                <MenuButton
+                  as={IconButton}
+                  icon={<HamburgerIcon />}
+                  variant="outline"
+                  aria-label="Options"
+                />
+                <MenuList>
+                  <MenuItem
+                    as={Link}
+                    href="https://github.com/craftzdog/craftzdog-homepage"
+                  >
+                    Source
                 </MenuItem>
-              </MenuList>
-            </Menu>
+                </MenuList>
+              </Menu>
+            </Box>
           </Box>
-        </Box>
       </Container>
     </Box>
-  )
-}
-
-export default Navbar
+      )
+    }
+    
+    export default Navbar

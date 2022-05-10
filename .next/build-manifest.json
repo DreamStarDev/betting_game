@@ -1,39 +1,45 @@
 {
   "polyfillFiles": [
-    "static/chunks/polyfills.js"
+    "static/chunks/polyfills-5cd94c89d3acac5f.js"
   ],
-  "devFiles": [
-    "static/chunks/react-refresh.js"
-  ],
-  "ampDevFiles": [
-    "static/chunks/webpack.js",
-    "static/chunks/amp.js"
-  ],
+  "devFiles": [],
+  "ampDevFiles": [],
   "lowPriorityFiles": [
-    "static/development/_buildManifest.js",
-    "static/development/_ssgManifest.js",
-    "static/development/_middlewareManifest.js"
+    "static/Gop4W5zKq8jUcVJZ2tVO0/_buildManifest.js",
+    "static/Gop4W5zKq8jUcVJZ2tVO0/_ssgManifest.js",
+    "static/Gop4W5zKq8jUcVJZ2tVO0/_middlewareManifest.js"
   ],
   "pages": {
     "/": [
-      "static/chunks/webpack.js",
-      "static/chunks/main.js",
-      "static/chunks/pages/index.js"
+      "static/chunks/webpack-a7fb9d755bc82f69.js",
+      "static/chunks/framework-756e481a24902eb1.js",
+      "static/chunks/main-6812559e9ef25bea.js",
+      "static/chunks/pages/index-73761fcc8eb232a0.js"
+    ],
+    "/404": [
+      "static/chunks/webpack-a7fb9d755bc82f69.js",
+      "static/chunks/framework-756e481a24902eb1.js",
+      "static/chunks/main-6812559e9ef25bea.js",
+      "static/chunks/pages/404-b67f1e95b7420dbc.js"
     ],
     "/_app": [
-      "static/chunks/webpack.js",
-      "static/chunks/main.js",
-      "static/chunks/pages/_app.js"
+      "static/chunks/webpack-a7fb9d755bc82f69.js",
+      "static/chunks/framework-756e481a24902eb1.js",
+      "static/chunks/main-6812559e9ef25bea.js",
+      "static/css/9b93cde9fef154b4.css",
+      "static/chunks/pages/_app-f0a61859181f3b63.js"
     ],
     "/_error": [
-      "static/chunks/webpack.js",
-      "static/chunks/main.js",
-      "static/chunks/pages/_error.js"
+      "static/chunks/webpack-a7fb9d755bc82f69.js",
+      "static/chunks/framework-756e481a24902eb1.js",
+      "static/chunks/main-6812559e9ef25bea.js",
+      "static/chunks/pages/_error-f39b03beebab059d.js"
     ],
     "/betting": [
-      "static/chunks/webpack.js",
-      "static/chunks/main.js",
-      "static/chunks/pages/betting.js"
+      "static/chunks/webpack-a7fb9d755bc82f69.js",
+      "static/chunks/framework-756e481a24902eb1.js",
+      "static/chunks/main-6812559e9ef25bea.js",
+      "static/chunks/pages/betting-88538c6ac2c2d827.js"
     ]
   },
   "ampFirstPages": []

@@ -72,7 +72,7 @@ const Home = ({ wallet, connectWallet, games, web3, setGames, contract }) => {
   return (
     <Layout>
       <Container>
-        <Box
+        {/* <Box
           className='degenhound'
           m="auto"
           at={['-20px', '-60px', '-120px']}
@@ -91,7 +91,18 @@ const Home = ({ wallet, connectWallet, games, web3, setGames, contract }) => {
             height={450}
           />
 
-        </Box>
+        </Box> */}
+
+        <div
+          style={{ display: 'flex', justifyContent: 'center' }}
+        >
+          <img
+            src="/images/houndsmoking.gif"
+            width={450}
+            height={450}
+          />
+        </div>
+
         <Box
           borderRadius="lg"
           mb={6}
@@ -181,11 +192,11 @@ const Home = ({ wallet, connectWallet, games, web3, setGames, contract }) => {
             {" "}that allows users to play Double or Nothing
             with their Ethereum tokens. Odds are 50/50 with a 5% fee, 3% of which is distributed
           to DH NFT holders in MATIC. Our Smart contract uses a brand-new way to generate
-          True Randomness and we are nearly positive the exploit risk is almost eliminated. 
-          The way it is developed is a tricky combination of a common way of using a keccak256 hash function and multiple 
-          unpredictable values on the blockchain. There are billions of transactions in the blockchain generated each second, 
-          and no one can 100% predict when a certain one will be processed and verified within a certain time. 
-          So we use that information based on balances of multiple top Ethereum exchange accounts - 
+          True Randomness and we are nearly positive the exploit risk is almost eliminated.
+          The way it is developed is a tricky combination of a common way of using a keccak256 hash function and multiple
+          unpredictable values on the blockchain. There are billions of transactions in the blockchain generated each second,
+          and no one can 100% predict when a certain one will be processed and verified within a certain time.
+          So we use that information based on balances of multiple top Ethereum exchange accounts -
           and these balances are changing almost every second.
         </Paragraph>
 

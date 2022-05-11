@@ -66,16 +66,16 @@ const Betting = ({ wallet, web3, contract, contractAddress, balance, setBalance 
             // contract.events.Result({}, async (error, event) => {
             contract.once('Result', {}, async (error, event) => {
                 const verdict = event.returnValues.winAmount;
-                const index = Math.floor(Math.random() * 2) + 1;
+                let index = Math.floor(Math.random() * 100) % 3 + 1;
                 if (verdict === '0') {
                     // alert('SORRY, UNFORTUNATELY YOU LOST :(')
                     setVerdict(0);
 
                     if (hound === 'orange') {
-                        let url = "/images/grey_win/grey_win_"+index+".gif";
+                        let url = "/images/grey_win/grey_win_" + index + ".gif";
                         setRaceUrl(url)
                     } else {
-                        let url = "/images/orange_win/orange_win_"+index+".gif";
+                        let url = "/images/orange_win/orange_win_" + index + ".gif";
                         setRaceUrl(url)
                     }
                 } else {
@@ -83,10 +83,10 @@ const Betting = ({ wallet, web3, contract, contractAddress, balance, setBalance 
                     setVerdict(1);
 
                     if (hound === 'grey') {
-                        let url = "/images/grey_win/grey_win_"+index+".gif";
+                        let url = "/images/grey_win/grey_win_" + index + ".gif";
                         setRaceUrl(url)
                     } else {
-                        let url = "/images/orange_win/orange_win_"+index+".gif";
+                        let url = "/images/orange_win/orange_win_" + index + ".gif";
                         setRaceUrl(url)
                     }
                 }
@@ -118,7 +118,7 @@ const Betting = ({ wallet, web3, contract, contractAddress, balance, setBalance 
             <Container>
                 {
                     loading == 1 ? (
-                        <>
+                        <div>
                             <div
                                 style={{ display: 'flex', justifyContent: 'center', marginTop: 50 }}
                             >
@@ -128,7 +128,14 @@ const Betting = ({ wallet, web3, contract, contractAddress, balance, setBalance 
                                     height={250}
                                 />
                             </div>
-
+                            <Box display={{ md: 'flex' }}>
+                                <Box
+                                    flexGrow={1}
+                                    textAlign="center"
+                                >
+                                    <p>Loading the track.. </p>
+                                </Box>
+                            </Box>
                             <hr />
                             <div
                                 style={{ display: 'flex', justifyContent: 'center', marginTop: 50 }}
@@ -150,9 +157,9 @@ const Betting = ({ wallet, web3, contract, contractAddress, balance, setBalance 
                             >
                                 Betting on {hound} hound for {betAmount} eth
                             </Box>
-                        </>
+                        </div>
                     ) : (loading == 0 ? (
-                        <>
+                        <div>
                             <div
                                 style={{ display: 'flex', justifyContent: 'center', marginTop: 50 }}
                             >
@@ -266,27 +273,29 @@ const Betting = ({ wallet, web3, contract, contractAddress, balance, setBalance 
                                     DOUBLE OR NOTHING
                                     </Button>
                             </Box>
-                        </>
+                        </div>
 
                     ) : (
-                            <>
-                                <Box
-                                    borderRadius="lg"
-                                    mb={6}
-                                    mt={20}
-                                    p={3}
-                                    textAlign="center"
-                                    bg={useColorModeValue('whiteAlpha.500', 'whiteAlpha.200')}
-                                    css={{ backdropFilter: 'blur(10px)' }}
-                                >
-                                    {
-                                        verdict ? (
-                                            <span style={{fontSize: 30}}>Congratulations, you won!</span>
-                                        ) : (
-                                            <span style={{fontSize: 30}}>Sorry, you lost!</span>
-                                        )
-                                    }
-                                </Box>
+                            <div>
+                                <Section delay={4.5}>
+                                    <Box
+                                        borderRadius="lg"
+                                        mb={6}
+                                        mt={20}
+                                        p={3}
+                                        textAlign="center"
+                                        bg={useColorModeValue('whiteAlpha.500', 'whiteAlpha.200')}
+                                        css={{ backdropFilter: 'blur(10px)' }}
+                                    >
+                                        {
+                                            verdict ? (
+                                                <span style={{ fontSize: 30 }}>Congratulations, you won!</span>
+                                            ) : (
+                                                    <span style={{ fontSize: 30 }}>Sorry, you lost!</span>
+                                                )
+                                        }
+                                    </Box>
+                                </Section>
 
                                 <div
                                     style={{ display: 'flex', justifyContent: 'center', marginTop: 50 }}
@@ -298,22 +307,24 @@ const Betting = ({ wallet, web3, contract, contractAddress, balance, setBalance 
                                     />
                                 </div>
 
-                                <Box align="center" my={4}>
-                                    <Button
-                                        colorScheme='teal'
-                                        onClick={onRetryClicked}
-                                    >
-                                        Retry
+                                <Section delay={4.5}>
+                                    <Box align="center" my={4}>
+                                        <Button
+                                            colorScheme='teal'
+                                            onClick={onRetryClicked}
+                                        >
+                                            Retry
                                     </Button>
-                                    <Button
-                                        colorScheme='teal'
-                                        style={{ marginLeft: 16 }}
-                                        onClick={onQuitClicked}
-                                    >
-                                        Quit
+                                        <Button
+                                            colorScheme='teal'
+                                            style={{ marginLeft: 16 }}
+                                            onClick={onQuitClicked}
+                                        >
+                                            Quit
                                     </Button>
-                                </Box>
-                            </>
+                                    </Box>
+                                </Section>
+                            </div>
                         ))
                 }
 

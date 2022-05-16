@@ -4,9 +4,9 @@ import { AnimatePresence } from 'framer-motion'
 import Chakra from '../components/chakra'
 
 import { useState, useEffect } from 'react';
-import useSound from 'use-sound';
+// import useSound from 'use-sound';
 
-import clickSound from '../sound/click.mp3';
+// import clickSound from '../sound/click.mp3';
 
 import Web3 from 'web3'
 import "../styles/main.css";
@@ -28,7 +28,7 @@ function Website({ Component, pageProps, router }) {
   const [wallet, setWallet] = useState('');
   const [balance, setBalance] = useState(0);
   const [games, setGames] = useState([]);
-  const [clickSoundPlay] = useSound(clickSound);
+  // const [clickSoundPlay] = useSound(clickSound);
 
   useEffect(() => {
     async function init() {
@@ -156,7 +156,7 @@ function Website({ Component, pageProps, router }) {
             games={games}
             setGames={setGames}
             contract={contract}
-            clickSoundPlay={clickSoundPlay}
+            // clickSoundPlay={clickSoundPlay}
           />
         </AnimatePresence>
       </Layout>

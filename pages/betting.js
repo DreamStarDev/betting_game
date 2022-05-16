@@ -164,7 +164,7 @@ const Betting = ({ wallet, web3, contract, contractAddress, balance, setBalance 
                                 style={{ display: 'flex', justifyContent: 'center', marginTop: 50 }}
                             >
                                 <img
-                                    src="/images/houndsmoking1.png"
+                                    src="/images/betting_hound.gif"
                                     width={300}
                                     height={300}
                                 />

@@ -6,7 +6,7 @@ import Chakra from '../components/chakra'
 import { useState, useEffect } from 'react';
 import Web3 from 'web3'
 import "../styles/main.css";
-const ROPSTEN_CHAIN_ID = 3;
+const MAIN_CHAIN_ID = 3;
 const web3 = new Web3(Web3.givenProvider);
 // const web3Provider = new Web3.providers.HttpProvider("https://ropsten.infura.io/v3/");
 // const web3 = new Web3(web3Provider);
@@ -47,7 +47,7 @@ function Website({ Component, pageProps, router }) {
       });
 
       window.ethereum.on("chainChanged", async (_chainId) => {
-        if (_chainId != ROPSTEN_CHAIN_ID) {
+        if (_chainId != MAIN_CHAIN_ID) {
           setWallet("");
           setBalance(0);
         }
@@ -64,7 +64,7 @@ function Website({ Component, pageProps, router }) {
         method: "eth_chainId"
       });
 
-      if (chainId != ROPSTEN_CHAIN_ID) {
+      if (chainId != MAIN_CHAIN_ID) {
         alert("Please switch to Ethereum network!");
         setWallet("");
         setBalance(0);
@@ -96,7 +96,7 @@ function Website({ Component, pageProps, router }) {
           method: "eth_chainId"
         });
 
-        if (chainId != ROPSTEN_CHAIN_ID) {
+        if (chainId != MAIN_CHAIN_ID) {
           setWallet("");
           setBalance(0);
           return;

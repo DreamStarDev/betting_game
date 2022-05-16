@@ -23,6 +23,8 @@ import Image from 'next/image'
 import { useState, useEffect } from 'react';
 import Router from 'next/router'
 
+const MAIN_CHAIN_ID = 3;
+
 const Home = ({ wallet, connectWallet, games, web3, setGames, contract }) => {
 
   useEffect(() => {
@@ -31,7 +33,7 @@ const Home = ({ wallet, connectWallet, games, web3, setGames, contract }) => {
         const chainId = await window.ethereum.request({
           method: "eth_chainId"
         });
-        if (chainId != 3) return;
+        if (chainId != MAIN_CHAIN_ID) return;
         let lastGameId = await contract.methods.gameId().call();
         let len = Math.min(lastGameId, 8);
         let gameArray = [];
@@ -66,6 +68,12 @@ const Home = ({ wallet, connectWallet, games, web3, setGames, contract }) => {
   const playClicked = () => {
     Router.push({
       pathname: '/betting',
+    });
+  }
+
+  const mintClicked = () => {
+    Router.push({
+      pathname: '/mint'
     });
   }
 
@@ -123,12 +131,21 @@ const Home = ({ wallet, connectWallet, games, web3, setGames, contract }) => {
                 Connect Wallet
             </Button>
             ) : (
-                <Button
-                  colorScheme="teal"
-                  onClick={playClicked}
-                >
-                  Play Now
-                </Button>
+                <div>
+                  <Button
+                    colorScheme="teal"
+                    onClick={playClicked}
+                  >
+                    Play Now
+                  </Button>
+                  <Button
+                    colorScheme="teal"
+                    onClick={mintClicked}
+                    style={{ marginLeft: 8 }}
+                  >
+                    Mint Now
+                  </Button>
+                </div>
               )
           }
         </Box>

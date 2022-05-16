@@ -1,4 +1,5 @@
 import Logo from './logo'
+import Sound from './sound'
 import NextLink from 'next/link'
 import {
   Container,
@@ -39,7 +40,7 @@ const LinkItem = ({ href, path, target, children, ...props }) => {
 
 const Navbar = (props) => {
   const { path, wallet } = props
-  
+
   return (
     <Box
       position="fixed"
@@ -86,7 +87,7 @@ const Navbar = (props) => {
           </LinkItem>
           <LinkItem
             target="_blank"
-            href="https://opensea.io/"
+            href="https://twitter.com/handsomehoundrc"
             path={path}
             display="inline-flex"
             alignItems="center"
@@ -98,7 +99,7 @@ const Navbar = (props) => {
           </LinkItem>
           <LinkItem
             target="_blank"
-            href="https://twitter.com/handsomehoundrc"
+            href="https://opensea.io/"
             path={path}
             display="inline-flex"
             alignItems="center"
@@ -117,31 +118,53 @@ const Navbar = (props) => {
           </Text>
         </Stack>
 
-          <Box flex={1} align="right">
-            <ThemeToggleButton />
+        <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
+          <Sound />
+        </div>
+        <Box flex={1} align="right">
+          {/* <Sound /> */}
+          <ThemeToggleButton />
 
-            <Box ml={2} display={{ base: 'inline-block', md: 'none' }}>
-              <Menu isLazy id="navbar-menu">
-                <MenuButton
-                  as={IconButton}
-                  icon={<HamburgerIcon />}
-                  variant="outline"
-                  aria-label="Options"
-                />
-                <MenuList>
-                  <MenuItem
-                    as={Link}
-                    href="https://github.com/craftzdog/craftzdog-homepage"
-                  >
-                    Source
+          <Box ml={2} display={{ base: 'inline-block', md: 'none' }}>
+            <Menu isLazy id="navbar-menu">
+              <MenuButton
+                as={IconButton}
+                icon={<HamburgerIcon />}
+                variant="outline"
+                aria-label="Options"
+              />
+              <MenuList>
+                <MenuItem
+                  as={Link}
+                  href="https://discord.gg/bj4T2hrVvs"
+                >
+                  Discord
                 </MenuItem>
-                </MenuList>
-              </Menu>
-            </Box>
+                <MenuItem
+                  as={Link}
+                  href="https://twitter.com/handsomehoundrc"
+                >
+                  Twitter
+                </MenuItem>
+                <MenuItem
+                  as={Link}
+                  href="https://opensea.io/"
+                >
+                  Opensea
+                </MenuItem>
+                <MenuItem
+                  as={Link}
+                  href="https://www.craftz.dog/"
+                >
+                  Source
+                </MenuItem>
+              </MenuList>
+            </Menu>
           </Box>
+        </Box>
       </Container>
     </Box>
-      )
-    }
-    
-    export default Navbar
+  )
+}
+
+export default Navbar

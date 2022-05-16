@@ -23,7 +23,7 @@ import Image from 'next/image'
 import { useState, useEffect } from 'react';
 import Router from 'next/router'
 
-const MAIN_CHAIN_ID = 3;
+const MAIN_CHAIN_ID = 1;
 
 const Home = ({ wallet, connectWallet, games, web3, setGames, contract }) => {
 

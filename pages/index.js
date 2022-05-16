@@ -25,7 +25,7 @@ import Router from 'next/router'
 
 const MAIN_CHAIN_ID = 3;
 
-const Home = ({ wallet, connectWallet, games, web3, setGames, contract }) => {
+const Home = ({ wallet, connectWallet, games, web3, setGames, contract, clickSoundPlay }) => {
 
   useEffect(() => {
     async function load() {
@@ -69,12 +69,14 @@ const Home = ({ wallet, connectWallet, games, web3, setGames, contract }) => {
     Router.push({
       pathname: '/betting',
     });
+    clickSoundPlay();
   }
 
   const mintClicked = () => {
     Router.push({
       pathname: '/mint'
     });
+    clickSoundPlay();
   }
 
   return (

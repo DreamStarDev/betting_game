@@ -123,7 +123,7 @@ const Betting = ({ wallet, web3, contract, contractAddress, balance, setBalance 
                                 style={{ display: 'flex', justifyContent: 'center', marginTop: 50 }}
                             >
                                 <img
-                                    src="/images/grey_running.gif"
+                                    src="/images/orange_running.gif"
                                     width={250}
                                     height={250}
                                 />
@@ -141,7 +141,7 @@ const Betting = ({ wallet, web3, contract, contractAddress, balance, setBalance 
                                 style={{ display: 'flex', justifyContent: 'center', marginTop: 50 }}
                             >
                                 <img
-                                    src="/images/orange_running.gif"
+                                    src="/images/grey_running.gif"
                                     width={250}
                                     height={250}
                                 />
@@ -277,7 +277,7 @@ const Betting = ({ wallet, web3, contract, contractAddress, balance, setBalance 
 
                     ) : (
                             <div>
-                                <Section delay={4.5}>
+                                <Section delay={5}>
                                     <Box
                                         borderRadius="lg"
                                         mb={6}

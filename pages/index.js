@@ -62,21 +62,23 @@ const Home = ({ wallet, connectWallet, games, web3, setGames, contract, clickSou
   }, []);
 
   const connectWalletClicked = () => {
+    clickSoundPlay();
     connectWallet();
   }
 
   const playClicked = () => {
+    clickSoundPlay();
     Router.push({
       pathname: '/betting',
     });
-    clickSoundPlay();
+    
   }
 
   const mintClicked = () => {
+    clickSoundPlay();
     Router.push({
       pathname: '/mint'
     });
-    clickSoundPlay();
   }
 
   return (

@@ -109,6 +109,18 @@ const Navbar = (props) => {
             Opensea
           </LinkItem>
 
+          <LinkItem
+            target="_blank"
+            href="https://poly.degenhounds.com"
+            path={path}
+            display="inline-flex"
+            alignItems="center"
+            style={{ gap: 4 }}
+            pl={2}
+          >
+            MATIC PLAY
+          </LinkItem>
+
           <Text>
             {wallet.length > 0 ? (
               String(wallet).substring(0, 6) +
